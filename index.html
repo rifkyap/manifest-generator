@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manifest Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+  
+  <!-- manifest-generator section -->
+  <div class="wrapper">
+    <section class="container">
+      <h1><i class="ri-sparkling-fill"></i> Manifest Generator</h1>
+      
+      <select id="select">
+        <option value="resource">Resource Pack</option>
+        <option value="behavior">Behavior Pack</option>
+        <option value="dependent">Dependent (Resource & Behavior)</option>
+      </select><br>
+      
+      <label for="packName" id="labelPack">Pack Name:</label><br>
+      <input type="text" id="packName" placeholder="example pack"><br>
+      <label for="packDesc">Pack Description:</label><br>
+      <input type="text" id="packDesc" placeholder="example by @anonymous"><br>
+      
+      <button type="button" onclick="generate()"><i class="ri-ai-generate"></i> Generate</button>
+      
+      <pre id="result" style="color: #999;">
+      {
+        "format_version": 2,
+        "header": {
+          "name": "example pack",
+          "description": "example by @anonymous",
+          "uuid": "example.uuid",
+          "version": [1, 0, 0],
+          "min_engine_version": [1, 16, 0]
+        },
+        "modules": [
+          {
+            "type": "resources",
+            "uuid": "example.uuid",
+            "version": [1, 0, 0]
+          }
+        ]
+      }
+      </pre>
+      
+      <button onclick="copy('result')"><i class="ri-clipboard-line"></i> Copy</button>
+    </section>
+
+    <div class="result2">
+      <label for="packName2" id="labelPack2">Pack Name:</label><br>
+      <input type="text" id="packName2" placeholder="example pack"><br>
+      <label for="packDesc2">Pack Description:</label><br>
+      <input type="text" id="packDesc2" placeholder="example by @anonymous"><br>
+      
+      <button type="button" onclick="generate()"><i class="ri-ai-generate"></i> Generate</button>
+      
+      <pre id="result2" style="color: #999;">
+      {
+        "format_version": 2,
+        "header": {
+          "name": "example pack",
+          "description": "example by @anonymous",
+          "uuid": "example.uuid",
+          "version": [1, 0, 0],
+          "min_engine_version": [1, 16, 0]
+        },
+        "modules": [
+          {
+            "type": "data",
+            "uuid": "example.uuid",
+            "version": [1, 0, 0]
+          }
+        ]
+      }
+      </pre>
+      
+      <button onclick="copy('result2')"><i class="ri-clipboard-line"></i> Copy</button>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
