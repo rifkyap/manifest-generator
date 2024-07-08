@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
         {
               "uuid": "${resourceUUID}",
               "version": [1, 0, 0]
-          }
-      ]`;
+        }
+    ]`;
 
         if (select.value === "resource") {
             result.textContent = createManifest("resources", firstPackName, firstPackDesc, resourceUUID, uuid());
